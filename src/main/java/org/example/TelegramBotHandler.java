@@ -16,7 +16,7 @@ public class TelegramBotHandler extends TelegramLongPollingBot {
 
     @Override
     public String getBotUsername() {
-        return null;
+        return botUserName;
     }
 
     public String getBotTocen() {
