@@ -5,8 +5,8 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 
 public class TelegramBotHandler extends TelegramLongPollingBot {
 
-    String botUserName = "";
-    String botTocen = "";
+    String botUserName = "PrompterBot_bot";
+    String botTocen = "7006512662:AAEgxr7tWKLn8mVj3MZA4OxSS6FHiI4RLz0";
 
 
     @Override
