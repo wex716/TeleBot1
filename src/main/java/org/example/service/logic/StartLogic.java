@@ -14,7 +14,15 @@ public class StartLogic {
             return messageToUser;
         }
 
+//        messageToUser.setText("Выберите действие");
+//        messageToUser.setReplyMarkup(InlineKeyboardsStorage.getShowOrAddAuthorsKeyboard());
+//
+//        transmittedData.setState(State.WaitingShowOrAddAuthors);
+
 
         return messageToUser;
     }
+
+
+
 }

@@ -61,7 +61,7 @@ public class TelegramBotHandler extends TelegramLongPollingBot {
         return botUsername;
     }
 
-    public String getBotTocen() {
+    public String getBotToken() {
         return botToken;
     }
 }

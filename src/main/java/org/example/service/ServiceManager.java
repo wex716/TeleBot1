@@ -21,9 +21,15 @@ public class ServiceManager {
         startLogic = new StartLogic();
 
         methods.put(State.WaitingStart, startLogic::processWaitingCommandStart);
-
-        methods.put(State.WaitingStart, startLogic::processWaitingCommandStart);
+//        methods.put(State.WaitingInstructionOfKnowledge, startLogic::processWaitingInstructionOfKnowledge);
     }
+
+
+
+
+
+
+
 
     public SendMessage callLogicMethod(String textFromUser, TransmittedData transmittedData) throws Exception {
         String state = transmittedData.getState();
