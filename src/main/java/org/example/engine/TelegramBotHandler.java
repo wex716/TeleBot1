@@ -1,5 +1,6 @@
 package org.example.engine;
 
+import org.example.statemachine.ChatsRouter;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.DeleteMessage;
@@ -8,9 +9,16 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 public class TelegramBotHandler extends TelegramLongPollingBot {
 
-    String botUserName = "PrompterBot_bot";
-    String botTocen = "7006512662:AAEgxr7tWKLn8mVj3MZA4OxSS6FHiI4RLz0";
+    private String botUsername;
+    private String botToken;
+    private ChatsRouter chatsRouter;
 
+    public TelegramBotHandler() {
+
+     botUsername = "PrompterBot_bot";
+     botToken = "7006512662:AAEgxr7tWKLn8mVj3MZA4OxSS6FHiI4RLz0";
+     chatsRouter = new ChatsRouter();
+    }
 
     @Override
     public void onUpdateReceived(Update update) {
@@ -29,7 +37,7 @@ public class TelegramBotHandler extends TelegramLongPollingBot {
                 textFromUser = update.getCallbackQuery().getData();
             }
 
-            SendMessage messageToUser = сhatsRouter.route(chatId, textFromUser);
+            SendMessage messageToUser = chatsRouter.route(chatId, textFromUser);
 
             execute(messageToUser);
         } catch (Exception e) {
@@ -50,10 +58,10 @@ public class TelegramBotHandler extends TelegramLongPollingBot {
 
     @Override
     public String getBotUsername() {
-        return botUserName;
+        return botUsername;
     }
 
     public String getBotTocen() {
-        return botTocen;
+        return botToken;
     }
 }
