@@ -21,7 +21,7 @@ public class ServiceManager {
         startLogic = new StartLogic();
 
         methods.put(State.WaitingStart, startLogic::processWaitingCommandStart);
-//        methods.put(State.WaitingInstructionOfKnowledge, startLogic::processWaitingInstructionOfKnowledge);
+        methods.put(State.WaitingToAddAnswer, startLogic::processWaitingToAddAnswer);
     }
 
 
